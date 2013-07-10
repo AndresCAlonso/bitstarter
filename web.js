@@ -8,6 +8,7 @@ app.get('/', function(request, response) {
     if (err) {
         console.log("NEW ERROR: " + err);
     }
+    console.log("***********************************************");
     return data.toString();  
   });
   response.send(greeting);
