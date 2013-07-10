@@ -9,6 +9,7 @@ app.get('/', function(request, response) {
         console.log("NEW ERROR: " + err);
     }
     console.log("***********************************************");
+    console.log(typeof data);
     return data.toString();  
   });
   response.send(greeting);
