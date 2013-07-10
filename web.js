@@ -4,19 +4,13 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
   var fs = require("fs");
 
-  var greeting = function() {
-    var message = '';
-    fs.readFile('index.html', function(err, data) {
-      if (err) {
-        throw error;
-      }
-      console.log("*********************************************** NO ERRORS IN FILE READING");
-      console.log(typeof data);
-      message = data.toString();  
-      response.send(message);
+  fs.readFile('index.html', function(err, data) {
+    if (err) {
+      throw error;
+    }
+    
+    response.send(data.toString());
     });
-    return message;
-  });
 });
 
 var port = process.env.PORT || 5000;
