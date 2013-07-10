@@ -13,10 +13,10 @@ app.get('/', function(request, response) {
       console.log("*********************************************** NO ERRORS IN FILE READING");
       console.log(typeof data);
       message = data.toString();  
+      response.send(message);
     });
-    return message();
+    return message;
   });
-  response.send(message);
 });
 
 var port = process.env.PORT || 5000;
