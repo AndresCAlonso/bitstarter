@@ -5,7 +5,10 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  var greeting = fs.readFile('index.html', function(err, data) {
+  var greeting = fs.readFile('/index.html', function(err, data) {
+    if (err) {
+        console.log(err);
+    }
     return data.toString();  
   });
   response.send(greeting);
