@@ -6,7 +6,7 @@ app.get('/', function(request, response) {
 
   var greeting = fs.readFile('index.html', function(err, data) {
     if (err) {
-        console.log(err);
+        console.log("NEW ERROR: " + err);
     }
     return data.toString();  
   });
